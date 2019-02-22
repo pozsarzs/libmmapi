@@ -1,6 +1,6 @@
 { +--------------------------------------------------------------------------+ }
-{ | MMAPI 0.1 *                                                              | }
-{ | Copyright (C) 2019 Pozsar Zsolt <pozsarzs@gmail.com.hu>                  | }
+{ | MMAPI 0.1 * Application programming interface for MMxD device            | }
+{ | Copyright (C) 2019 Pozsar Zsolt <pozsarzs@gmail.com>                     | }
 { | mmapi.pas                                                                | }
 { | source code                                                              | }
 { +--------------------------------------------------------------------------+ }
@@ -50,6 +50,9 @@ function uid(id: string): string;
 function url(u: string): string;
 function username: string;
 function version: string;
+procedure erasedata;
+procedure eraseinfo;
+
 implementation
 {$ENDIF}
 
@@ -155,6 +158,23 @@ begin
   result:=LIBVER;
 end;
 
+procedure erasedata;
+var
+  b: byte;
+begin
+  for b:=0 to 32 do
+    devdata[b]:='';
+end;
+
+procedure eraseinfo;
+var
+  a, b: byte;
+begin
+  for a:=0 to 2 do
+    for b:=0 to 32 do
+      devinfo[a,b]:='';
+end;
+
 {$IFNDEF STATIC}
 exports address {$IFDEF WIN32} name 'address' {$ENDIF};
 exports city {$IFDEF WIN32} name 'city' {$ENDIF};
@@ -169,6 +189,8 @@ exports uid {$IFDEF WIN32} name 'uid' {$ENDIF};
 exports url {$IFDEF WIN32} name 'url' {$ENDIF};
 exports username {$IFDEF WIN32} name 'username' {$ENDIF};
 exports version {$IFDEF WIN32} name 'version' {$ENDIF};
+exports erasedata {$IFDEF WIN32} name 'erasedata' {$ENDIF};
+exports eraseinfo {$IFDEF WIN32} name 'eraseinfo' {$ENDIF};
 {$ENDIF}
 
 end.

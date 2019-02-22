@@ -1,0 +1,42 @@
+                            Installation instruction
+                            ~~~~~~~~~~~~~~~~~~~~~~~~
+
+Linux
+~~~~~
+a. From binary (bin) package
+
+   Install:
+   # ./mmclient-0.1-i586.bin
+
+   Remove:
+   # /opt/mmclient/uninstall
+
+b. From binary (tar.gz) package
+
+   Install:
+   # cp mmclient-0.1-i586.tar.gz /opt
+   # cd /opt
+   # tar -xzf mmclient-0.1-i586.tar.gz
+   # cd mmclient
+   # ./create_links
+            or
+   # tar -xzf mmclient-0.1-i586.tar.gz
+   # cd mmclient
+   # ./install
+
+   Remove:
+   # /opt/mmclient/remove_links
+   # rm -r /opt/mmclient/
+            or
+   # /opt/mmclient/uninstall
+
+c. From source package
+
+   Build and install:
+   $ tar -xzf mmclient-0.1.tar.gz
+   $ ./configure
+   $ make
+   # make install
+
+   Remove:
+   # make uninstall

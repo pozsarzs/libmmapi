@@ -1,0 +1,41 @@
+MMClient * Growing house remote monitoring application
+======================================================
+
+I. General information
+----------------------
+  It is a very simple console user interface client program for MM3D
+Raspberry Pi based controller device. You can monitoring no more than
+12 remote device.
+
+II. Installation and settings
+------------------------------
+  Installer packages are mmclient-0.1.tar.gz, mmclient-0.1-i586.bin and
+mmclient-0.1-i586.tar.gz. See INSTALL for detailed information.
+
+  Run mmclient-config to create and/or edit configuration file.
+
+III. Download and contact
+------------------------
+  Homepage:                          http://www.szerafingomba.hu
+                                     http://www.pozsarzs.hu
+  Contact:                           Pozsar Zsolt (self-employed)
+  E-mail:                            pozsar.zsolt@szerafingomba.hu
+  Phone:                             +36 56/470-272
+  Mobilphone:                        +36 30/359-8783
+  Postal address:                    Pozsar Zsolt
+                                     Kurazsi Fo ut 1., HU-5430 Tiszafoldvar
+                                     Hungary
+
+  Tax ID:                            60407850-1-36
+  Reg. number:                       20703695
+
+IV. Important information
+-------------------------
+  MMClient Copyright (C) 2019 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>
+
+  This program is free software: you can redistribute it and/or modify it
+under the terms of the European Union Public License 1.1 version.
+
+  This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.
