@@ -1,5 +1,5 @@
 # +----------------------------------------------------------------------------+
-# | MMClient v0.1 * Growing house remote monitoring application                |
+# | MMAPI 0.1 * Application programming interface for MMxD device              |
 # | Copyright (C) 2019 Pozsár Zsolt <pozsar.zsolt@.szerafingomba.hu>           |
 # | Makefile                                                                   |
 # | Makefile for Unix-like systems                                             |
