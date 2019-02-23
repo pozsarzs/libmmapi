@@ -7,7 +7,7 @@
 
 include ./Makefile.global
 
-dirs = desktop documents languages manuals settings source
+dirs = documents manuals source
 srcdirs = source
 
 all:
