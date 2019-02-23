@@ -39,12 +39,10 @@ const
 {$IFDEF STATIC}
 function address: string;
 function city: string;
-function devicedata(line: string): string;
-function deviceportsname(line: string): string;
+function devicedata(line: byte): string;
+function deviceportsname(line: byte): string;
 function devicetype: string;
 function deviceversion: string;
-function getdata: byte;
-function getinfo: byte;
 function growinghousenumber: string;
 function uid(id: string): string;
 function url(u: string): string;
@@ -52,6 +50,8 @@ function username: string;
 function version: string;
 procedure erasedata;
 procedure eraseinfo;
+procedure getdata;
+procedure getinfo;
 
 implementation
 {$ENDIF}
@@ -95,38 +95,6 @@ begin
     HttpGetText(cgiurl,sl);
     Free;
   end;
-end;
-
-function getdata: byte;
-var
-  b: byte;
-begin
-  sl:=TStringList.Create;
-  runcgi(devurl+'?uid='+devuid+'&value=3');
-  for b:=0 to 31 do
-    try
-      devdata[b]:=sl.Strings[b];
-    except
-    end;
-  sl.Free;
-end;
-
-function getinfo: byte;
-var
-  b: byte;
-  value: byte;
-begin
-  sl:=TStringList.Create;
-  for value:=0 to 2 do
-  begin
-    runcgi(devurl+'?uid='+devuid+'&value='+inttostr(value));
-    for b:=0 to 31 do
-    try
-      devinfo[value,b]:=sl.Strings[b];
-    except
-    end;
-  end;
-  sl.Free;
 end;
 
 function growinghousenumber: string;
@@ -175,6 +143,38 @@ begin
       devinfo[a,b]:='';
 end;
 
+procedure getdata;
+var
+  b: byte;
+begin
+  sl:=TStringList.Create;
+  runcgi(devurl+'?uid='+devuid+'&value=3');
+  for b:=0 to 31 do
+    try
+      devdata[b]:=sl.Strings[b];
+    except
+    end;
+  sl.Free;
+end;
+
+procedure getinfo;
+var
+  b: byte;
+  value: byte;
+begin
+  sl:=TStringList.Create;
+  for value:=0 to 2 do
+  begin
+    runcgi(devurl+'?uid='+devuid+'&value='+inttostr(value));
+    for b:=0 to 31 do
+    try
+      devinfo[value,b]:=sl.Strings[b];
+    except
+    end;
+  end;
+  sl.Free;
+end;
+
 {$IFNDEF STATIC}
 exports address {$IFDEF WIN32} name 'address' {$ENDIF};
 exports city {$IFDEF WIN32} name 'city' {$ENDIF};
@@ -182,8 +182,6 @@ exports devicedata {$IFDEF WIN32} name 'devicedata' {$ENDIF};
 exports deviceportsname {$IFDEF WIN32} name 'deviceportsname' {$ENDIF};
 exports devicetype {$IFDEF WIN32} name 'devicetype' {$ENDIF};
 exports deviceversion {$IFDEF WIN32} name 'deviceversion' {$ENDIF};
-exports getdata {$IFDEF WIN32} name 'getdata' {$ENDIF};
-exports getinfo {$IFDEF WIN32} name 'getinfo' {$ENDIF};
 exports growinghousenumber {$IFDEF WIN32} name 'growinghousenumber' {$ENDIF};
 exports uid {$IFDEF WIN32} name 'uid' {$ENDIF};
 exports url {$IFDEF WIN32} name 'url' {$ENDIF};
@@ -191,6 +189,8 @@ exports username {$IFDEF WIN32} name 'username' {$ENDIF};
 exports version {$IFDEF WIN32} name 'version' {$ENDIF};
 exports erasedata {$IFDEF WIN32} name 'erasedata' {$ENDIF};
 exports eraseinfo {$IFDEF WIN32} name 'eraseinfo' {$ENDIF};
+exports getdata {$IFDEF WIN32} name 'getdata' {$ENDIF};
+exports getinfo {$IFDEF WIN32} name 'getinfo' {$ENDIF};
 {$ENDIF}
 
 end.
