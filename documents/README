@@ -1,41 +1,186 @@
-MMClient * Growing house remote monitoring application
-======================================================
+Tubes2 and Tubes2 Open edition - electron tube catalog
 
-I. General information
-----------------------
+I. About software
+
   It is a very simple console user interface client program for MM3D
 Raspberry Pi based controller device. You can monitoring no more than
 12 remote device.
 
-II. Installation and settings
-------------------------------
-  Installer packages are mmclient-0.1.tar.gz, mmclient-0.1-i586.bin and
-mmclient-0.1-i586.tar.gz. See INSTALL for detailed information.
+  This is an electron tube catalog. Its database contents base pin-out and
+some parameters of components. Database contains record of more than four
+thousand electron tubes. There are CV/M2/VT type substitution searcher and tube
+characteristic drawer tool (except CUI version).
 
-  Run mmclient-config to create and/or edit configuration file.
+  OS support: DOS (CUI version), FreeBSD, Linux and Windows.
+  Language support: English and Hungarian.
 
-III. Download and contact
-------------------------
-  Homepage:                          http://www.szerafingomba.hu
-                                     http://www.pozsarzs.hu
-  Contact:                           Pozsar Zsolt (self-employed)
-  E-mail:                            pozsar.zsolt@szerafingomba.hu
-  Phone:                             +36 56/470-272
-  Mobilphone:                        +36 30/359-8783
-  Postal address:                    Pozsar Zsolt
-                                     Kurazsi Fo ut 1., HU-5430 Tiszafoldvar
-                                     Hungary
+  Categories of database:
 
-  Tax ID:                            60407850-1-36
-  Reg. number:                       20703695
+  * Cathode ray tube (for oscilloscope)   * Gas filled full-wave rectifiers (X)
+  * Counter tubes (dekatrons)             * Gas filled half-wave rectifiers (W)
+  * Counter tubes (nomotrons)             * Gas filled voltage stabilizer
+  * Diode-duodiode (AB)                   * Half-wave rectifiers (Y)
+  * Diode-duodiode-powerpentodes (ABL)    * Heil tubes
+  * Diode-duodiode-triodes (ABC)          * Heptodes (H)
+  * Diode-heptodes (AH)                   * Hexodes (H)
+  * Diode-pentodes (AF)                   * Nonodes (Q)
+  * Diode-tetrodes (AE)                   * Octodes (K)
+  * Diode-triodes (AC)                    * Pentode-secunder emission tube
+  * Diodes (A)                            * Pentode-tuning indicator (FM)
+  * Display tubes (Nixie tubes)           * Pentodes (F)
+  * Display tubes (flurotrons)            * Photocells
+  * Display tubes (numitrons)             * Power pentodes (L)
+  * Duo-half-wave rectifiers (YY)         * Power triodes (D)
+  * Duo-powerpentodes (LL)                * Tetrode-power pentodes (CL)
+  * Duo-powertriodes (DD)                 * Tetrode-power tetrodes (CL)
+  * Duodiode-pentodes (BF)                * Tetrode-secunder emission tube
+  * Duodiode-power pentodes (BL)          * Tetrodes (E)
+  * Duodiode-triodes (BC)                 * Thyratrons (N)
+  * Duodiodes (AA)                        * Triode-heptodes (CH)
+  * Duodiodes (B)                         * Triode-hexodes (CH)
+  * Duopentodes (FF)                      * Triode-pentodes (CF)
+  * Duotetrodes (EE)                      * Triode-power pentodes (CL)
+  * Duotriodes (CC)                       * Triode-power tetrodes (CL)
+  * Full-wave rectifiers (Z)              * Triodes (C)
+  * Gas filled current stabilizers        * Tuning indicator tubes (M)
 
-IV. Important information
--------------------------
-  MMClient Copyright (C) 2019 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>
+You can choice between following two versions of Tubes2:
 
-  This program is free software: you can redistribute it and/or modify it
-under the terms of the European Union Public License 1.1 version.
+1. Tubes2 Open Edition
 
-  This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.
+  +   You can use it for free.
+  +   There are one kind of installer package for DOS and FreeBSD,
+      three kinds for Windows and seven kinds for Linux.
+  +   Source code is available.
+  +   Doesn't request serial number and product key.
+  +   You can update datafiles from internet.
+  -   It uses plain (edf or xedf) datafiles only.
+  -   Tubes2 Open edition's database updates only one times on year.
+  *   You can redistribute this version and/or modify it under the terms of the
+      GNU GPL 3.0 or later.
+
+2. Tubes2
+
+  +   It is a cheap electron tube catalog.
+  +   There are one kind of installer package for DOS and FreeBSD, three
+      kinds for Windows and six kinds for Linux.
+  +   You can buy more kinds of licence.
+  +   It uses plain and encoded (edf/cedf or xedf/cxedf) datafiles.
+  +   Tubes2's database updates monthly.
+  +   You can update datafiles from internet.
+  -   Source code is not available.
+  *   You can use this version under terms of EULA.
+
+II. How to get product key for Tubes2?
+
+  If you want to get product key, fill out on-line form at homepage.
+  Tubes2 can be used for the following licences:
+
+  Licence type    Network install    Computer   User
+  ==================================================
+  Home             not allowed          1        1
+  --------------------------------------------------
+  Education 1      not allowed          1       all
+  Education 2-5    not allowed          2-5     all
+  Education 5+       allowed            5+      all
+  --------------------------------------------------
+  Non-profit 1     not allowed          1       all
+  Non-profit 2-5   not allowed          2-5     all
+  Non-profit 5+      allowed            5+      all
+  --------------------------------------------------
+  Business 1       not allowed          1       all
+  Business 2-5     not allowed          2-5     all
+  Business 5+        allowed            5+      all
+  --------------------------------------------------
+  Packed product   not allowed          1       all
+
+III. How to get installer package for my OS?
+
+  Visit homepage (see later) to download installer packages:
+
+  DOS:         tubes2oe.exe                    portable (with source)
+               tubes2oe.zip                    portable (with source)
+               edf-tubes2-YYMMDD-en.zip
+
+               tubes2.exe                      portable
+               tubes2.zip                      portable
+               cedf-tubes2-YYMMDD-en.zip
+  -----------------------------------------------------------------------------
+  FreeBSD:     tubes2oe-2.2.txz
+               tubes2oe-2.2-FreeBSD-Port.shar  port package
+               xedf-tubes2-YYMMDD-en.zip
+
+               tubes2-2.2.txz
+               cxedf-tubes2-YYMMDD-en.zip
+  -----------------------------------------------------------------------------
+  Linux:       tubes2oe_2.2-1_i386.deb         Debian GNU/Linux
+               tubes2oe-2.2-i586-1.txz         Slackware
+               tubes2oe-2.2-1.i386.rpm         Suse Linux
+               tubes2oe-2.2-i586.bin           (linux-i586)
+               tubes2oe-2.2-i586.tar.gz        (linux-i586) - portable
+               tubes2oe-2.2.package            (linux-i586)
+               xedf-tubes2-YYMMDD-en.zip
+
+               tubes2_2.2-1_i386.deb           Debian GNU/Linux
+               tubes2-2.2-i586-1.txz           Slackware
+               tubes2-2.2-1.i386.rpm           Suse Linux
+               tubes2-2.2-i586.bin             (linux-i586)
+               tubes2-2.2-i586.tar.gz          (linux-i586) - portable
+               tubes2-2.2.package              (linux-i586)
+               cxedf-tubes2-YYMMDD-en.zip
+  -----------------------------------------------------------------------------
+  Windows:     tubes2oe-2.2-win32.exe
+               tubes2oe-2.2-win32.msi
+               tubes2oe-2.2-win32.zip          portable
+               xedf-tubes2-YYMMDD-en.zip
+
+               tubes2-2.2-win32.exe
+               tubes2-2.2-win32.msi
+               tubes2-2.2-win32.zip            portable
+               cxedf-tubes2-YYMMDD-en.zip
+  -----------------------------------------------------------------------------
+  source:      tubes2oe-2.2.tar.gz
+               xedf-tubes2-YYMMDD-en.zip
+
+IV. Settings
+
+  DOS:
+  - Set LANG environmental variable to set language (e.g. LANG=en).
+  - Edit CONFIG/TUBES2*.CFG file to set program.
+  - For update from internet function, install packet driver for your NIC
+    (e.g. C:\DRIVERS\3C509\PKTDVR\3C5X9PD 0X60).
+  - Edit CONFIG/WATTCP.CFG file (network settings).
+  - If a WATTCP.CFG environmental variable exists and its value is good,
+    you can skip previous step.
+
+  FreeBSD, Linux:
+  - Set LANG environmental variable to set language (e.g. LANG=en).
+  - Use 'File/Settings' in main menu to set application.
+
+  Windows:
+  - Use 'File/Settings' in main menu to set application.
+
+V. Contact
+
+   Homepage:             <http://www.pozsarzs.hu/tubes/tubes_en.html>
+
+   Author:               Pozsar Zsolt self-employed
+   Tax ID:               60407850-1-36
+   Registration num.:    20703695
+
+   E-mail:               <info@pozsarzs.hu>
+   Phone:                +36 56/470-272
+   Fax:                  +36 56/470-272
+   Mobile:               +36 30/359-8783
+   Postal address:       Pozsar Zsolt
+                         Kurazsi Fo ut 1.
+                         HU-5430 Tiszafoldvar
+                         Hungary
+
+   GIRO:                 10400061-67514856-53531005 (K&H Bank)
+   IBAN:                 HU08 1040 0061 6751 4856 5353 1005
+   PayPal:               pozsarzs@gmail.com
+
+---------------------------------------------------------------------------------
+  Tubes, Tubes2 * Copyright (C) 2008-2017 Pozsar Zsolt <info@pozsarzs.hu>
+  Tubes2 for DOS * Copyright (C) 2016-2017 Pozsar Zsolt <info@pozsarzs.hu>

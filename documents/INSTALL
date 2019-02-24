@@ -1,42 +1,87 @@
                             Installation instruction
                             ~~~~~~~~~~~~~~~~~~~~~~~~
+1. FreeBSD
+~~~~~~~~~~
+a. From binary (txz) package
 
-Linux
-~~~~~
-a. From binary (bin) package
+   Use package manager to install/remove application.
 
-   Install:
-   # ./mmclient-0.1-i586.bin
+b. From source package
+
+   Build and install:
+   # tar -xzf libmmapi-0.1.tar.gz
+   # ./configure
+   # make
+   # make install
 
    Remove:
-   # /opt/mmclient/uninstall
+   # make uninstall
 
-b. From binary (tar.gz) package
+2. Linux
+~~~~~~~~
+a. From binary (deb, rpm, txz) package
+
+   Use package manager to install/remove application.
+
+b. From binary (bin) package
 
    Install:
-   # cp mmclient-0.1-i586.tar.gz /opt
+   # ./libmmapi-0.1-i586.bin
+
+   Remove:
+   # /opt/libmmapi/uninstall
+
+c. From binary (tar.gz) package
+
+   Install:
+   # cp libmmapi-0.1-i586.tar.gz /opt
    # cd /opt
-   # tar -xzf mmclient-0.1-i586.tar.gz
-   # cd mmclient
+   # tar -xzf libmmapi-0.1-i586.tar.gz
+   # cd libmmapi
    # ./create_links
             or
-   # tar -xzf mmclient-0.1-i586.tar.gz
-   # cd mmclient
+   # tar -xzf libmmapi-0.1-i586.tar.gz
+   # cd libmmapi
    # ./install
 
    Remove:
-   # /opt/mmclient/remove_links
-   # rm -r /opt/mmclient/
+   # /opt/libmmapi/remove_links
+   # rm -r /opt/libmmapi/
             or
-   # /opt/mmclient/uninstall
+   # /opt/libmmapi/uninstall
 
-c. From source package
+d. From source package
 
    Build and install:
-   $ tar -xzf mmclient-0.1.tar.gz
+   $ tar -xzf libmmapi-0.1.tar.gz
    $ ./configure
    $ make
    # make install
 
    Remove:
    # make uninstall
+
+3. Windows
+~~~~~~~~~~
+a. From binary (exe) package
+
+   Run installer file and follow intructions.
+
+b. From binary (msi) package
+
+   > msiexec.exe /i libmmapi-0.1-win32.msi (or double-click to open
+                                                   package) 
+c. From binary (zip) package
+
+   > unzip libmmapi-0.1-win32.zip          (or use unpacking application)
+
+d. From source package
+
+   Build and install:
+   > tar -xzf libmmapi-0.1.tar.gz          (or use unpacking application)
+   > build.bat
+   > build.bat install
+
+   Remove:
+   > build.bat uninstall
+
