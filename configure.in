@@ -48,8 +48,6 @@ AC_SUBST(rm)
 AC_SUBST(sysconfdir)
 AC_SUBST(version)
 AC_OUTPUT(Makefile.global \
-          packaging/deb-arm/postinst \
-          packaging/deb-arm/postrm \
           packaging/deb-i386/postinst \
           packaging/deb-i386/postrm \
           packaging/rpm/libptc.spec.post \
