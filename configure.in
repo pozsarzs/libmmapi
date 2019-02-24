@@ -47,10 +47,7 @@ AC_SUBST(prefix)
 AC_SUBST(rm)
 AC_SUBST(sysconfdir)
 AC_SUBST(version)
-AC_OUTPUT(Makefile.global \
-          packaging/deb-i386/postinst \
-          packaging/deb-i386/postrm \
-          packaging/txz-linux/doinst.sh )
+AC_OUTPUT(Makefile.global)
 
 echo "
 Summary
