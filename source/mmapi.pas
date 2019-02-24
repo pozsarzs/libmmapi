@@ -17,8 +17,7 @@ FOR A PARTICULAR PURPOSE.
 // Uncomment next line if you want to use this as unit.
 // {$DEFINE STATIC}
 
-
-{$MODE OBJFPC}{$H+}
+{$H+}
 
 {$IFDEF STATIC}
 unit mmapi;
@@ -26,28 +25,29 @@ interface
 {$ELSE}
 library mmapi;
 {$ENDIF}
-uses Classes, sysutils, httpsend;
+uses
+  Classes, SysUtils, httpsend;
 var
   devdata: array[0..31] of string;
   devinfo: array[0..2,0..31] of string;
-  devuid: string;
-  devurl: string='00000000';
+  devuid: pchar;
+  devurl: pchar;
   sl : TStringList;
 const
-  LIBVER: string='0.1';
+  LIBVER: pchar='0.1';
 
 {$IFDEF STATIC}
-function address: string;
-function city: string;
-function devicedata(line: byte): string;
-function deviceportsname(line: byte): string;
-function devicetype: string;
-function deviceversion: string;
-function growinghousenumber: string;
-function uid(id: string): string;
-function url(u: string): string;
-function username: string;
-function version: string;
+function address: pchar;
+function city: pchar;
+function devicedata(line: byte): pchar;
+function deviceportsname(line: byte): pchar;
+function devicetype: pchar;
+function deviceversion: pchar;
+function growinghousenumber: pchar;
+function uid(id: pchar): pchar;
+function url(u: pchar): pchar;
+function username: pchar;
+function version: pchar;
 procedure erasedata;
 procedure eraseinfo;
 procedure getdata;
@@ -56,36 +56,42 @@ procedure getinfo;
 implementation
 {$ENDIF}
 
-function address: string;
+function address: pchar;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 begin
-  result:=devinfo[1,2];
+  result:=pchar(devinfo[1,2]);
 end;
 
-function city: string;
+function city: pchar;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 begin
-  result:=devinfo[1,1];
+  result:=pchar(devinfo[1,1]);
 end;
 
-function devicedata(line: byte): string;
+function devicedata(line: byte): pchar;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 begin
   if line<32 then
-    result:=devdata[line];
+    result:=pchar(devdata[line]);
 end;
 
-function deviceportsname(line: byte): string;
+function deviceportsname(line: byte): pchar;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 begin
   if line<32 then
-    result:=devinfo[2,line];
+    result:=pchar(devinfo[2,line]);
 end;
 
-function devicetype: string;
+function devicetype: pchar;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 begin
-  result:=devinfo[0,0];
+  result:=pchar(devinfo[0,0]);
 end;
 
-function deviceversion: string;
+function deviceversion: pchar;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 begin
-  result:=devinfo[0,1];
+  result:=pchar(devinfo[0,1]);
 end;
 
 procedure runcgi(cgiurl: string);
@@ -97,36 +103,42 @@ begin
   end;
 end;
 
-function growinghousenumber: string;
+function growinghousenumber: pchar;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 begin
-  result:=devinfo[1,3];
+  result:=pchar(devinfo[1,3]);
 end;
 
-function uid(id: string): string;
+function uid(id: pchar): pchar;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 begin
   if length(id)>0
     then devuid:=id
     else result:=devuid;
 end;
 
-function url(u: string): string;
+function url(u: pchar): pchar;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 begin
   if length(u)>0
     then devurl:=u
     else result:=devurl;
 end;
 
-function username: string;
+function username: pchar;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 begin
-  result:=devinfo[1,0];
+  result:=pchar(devinfo[1,0]);
 end;
 
-function version: string;
+function version: pchar;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 begin
   result:=LIBVER;
 end;
 
 procedure erasedata;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 var
   b: byte;
 begin
@@ -135,6 +147,7 @@ begin
 end;
 
 procedure eraseinfo;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 var
   a, b: byte;
 begin
@@ -144,6 +157,7 @@ begin
 end;
 
 procedure getdata;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 var
   b: byte;
 begin
@@ -151,13 +165,14 @@ begin
   runcgi(devurl+'?uid='+devuid+'&value=3');
   for b:=0 to 31 do
     try
-      devdata[b]:=sl.Strings[b];
+      devdata[b]:=sl.Strings[b]+#0;
     except
     end;
   sl.Free;
 end;
 
 procedure getinfo;
+{$IFNDEF STATIC} cdecl; export; {$ENDIF}
 var
   b: byte;
   value: byte;
