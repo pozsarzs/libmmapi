@@ -30,5 +30,5 @@ ldconfig
 
 %postun
 rm /usr/lib/libmmapi.so.0.1.1
-ln /usr/lib/libmmapi.so.0
+rm /usr/lib/libmmapi.so.0
 ldconfig
