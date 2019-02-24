@@ -142,45 +142,20 @@ III. How to get installer package for my OS?
   source:      tubes2oe-2.2.tar.gz
                xedf-tubes2-YYMMDD-en.zip
 
-IV. Settings
-
-  DOS:
-  - Set LANG environmental variable to set language (e.g. LANG=en).
-  - Edit CONFIG/TUBES2*.CFG file to set program.
-  - For update from internet function, install packet driver for your NIC
-    (e.g. C:\DRIVERS\3C509\PKTDVR\3C5X9PD 0X60).
-  - Edit CONFIG/WATTCP.CFG file (network settings).
-  - If a WATTCP.CFG environmental variable exists and its value is good,
-    you can skip previous step.
-
-  FreeBSD, Linux:
-  - Set LANG environmental variable to set language (e.g. LANG=en).
-  - Use 'File/Settings' in main menu to set application.
-
-  Windows:
-  - Use 'File/Settings' in main menu to set application.
-
 V. Contact
 
-   Homepage:             <http://www.pozsarzs.hu/tubes/tubes_en.html>
-
+   Homepage:             <http://www.szerafingomba.hu/softwares.html>
    Author:               Pozsar Zsolt self-employed
    Tax ID:               60407850-1-36
    Registration num.:    20703695
 
-   E-mail:               <info@pozsarzs.hu>
+   E-mail:               <pozsar.zsolt@.szerafingomba.hu>
    Phone:                +36 56/470-272
-   Fax:                  +36 56/470-272
    Mobile:               +36 30/359-8783
    Postal address:       Pozsar Zsolt
                          Kurazsi Fo ut 1.
                          HU-5430 Tiszafoldvar
                          Hungary
-
-   GIRO:                 10400061-67514856-53531005 (K&H Bank)
-   IBAN:                 HU08 1040 0061 6751 4856 5353 1005
-   PayPal:               pozsarzs@gmail.com
-
 ---------------------------------------------------------------------------------
-  Tubes, Tubes2 * Copyright (C) 2008-2017 Pozsar Zsolt <info@pozsarzs.hu>
-  Tubes2 for DOS * Copyright (C) 2016-2017 Pozsar Zsolt <info@pozsarzs.hu>
+  MMAPI * Copyright (C) 2019 Pozsar Zsolt <pozsar.zsolt@.szerafingomba.hu>
+
