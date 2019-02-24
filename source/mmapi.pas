@@ -17,7 +17,7 @@ FOR A PARTICULAR PURPOSE.
 // Uncomment next line if you want to use this as unit.
 // {$DEFINE STATIC}
 
-{$H+}
+{$MODE OBJFPC}{$H+}
 
 {$IFDEF STATIC}
 unit mmapi;
