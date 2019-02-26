@@ -6,11 +6,5 @@ if [ "$1" = "configure" ]; then
     ln -sf /usr/share/doc/libmmapi /usr/doc/libmmapi
   fi
 fi
-if [ -x update-menus ]; then
-  update-menus
-fi
 # End automatically added section
-mv /usr/lib/libmmapi.so /usr/lib/libmmapi.so.0.1.1
-ln -s /usr/lib/libmmapi.so.0.1.1 /usr/lib/libmmapi.so.0
-ln -s /usr/lib/libmmapi.so.0.1.1 /usr/lib/libmmapi.so
 ldconfig

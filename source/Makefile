@@ -29,7 +29,7 @@ install:
 	@for x in $(binfiles); do \
 	  if [ -e ./lib/$(architecture)-$(os)/$$x ]; then $(install) -m $(binmode) ./lib/$(architecture)-$(os)/$$x $(libdir); fi; \
 	done
-	mv $(libdir)/$(name).so $(libdir)/$(name).so.$(version).1
+	mv $(libdir)/$(name).so $(libdir)/$(name).so.$(version).0
 	ln -s $(libdir)/$(name).so.$(version).1 $(libdir)/$(name).so.0
 	ln -s $(libdir)/$(name).so.$(version).1 $(libdir)/$(name).so
 	ldconfig
@@ -38,7 +38,7 @@ install:
 uninstall:
 	@echo -n "- Removing binary files..."
 	@for x in $(binfiles); do $(rm) $(libdir)/$$x; done
-	$(rm) $(libdir)/$(name).so.$(version).1
+	$(rm) $(libdir)/$(name).so.$(version).0
 	$(rm) $(libdir)/$(name).so.0
 	ldconfig
 	@echo "done."
