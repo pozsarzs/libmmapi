@@ -193,10 +193,7 @@ end;
 {$IFNDEF STATIC}
 {$IFDEF WIN32}
 exports
-  DllCanUnloadNow;
-  DllGetClassObject;
-  DllRegisterServer;
-  DllUnRegisterServer;
+  DllCanUnloadNow, DllGetClassObject, DllRegisterServer, DllUnregisterServer;
 {$ENDIF}
 
 exports address {$IFDEF WIN32} name 'address' {$ENDIF};
