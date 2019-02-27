@@ -1,7 +1,7 @@
 Group: System/Libraries
 License: EUPL
 Name: libmmapi
-Packager: Pozsar Zsolt <pozsar.zsolt@.szerafingomba.hu>
+Packager: Pozsar Zsolt <pozsar.zsolt@szerafingomba.hu>
 Release: 1
 Summary: API for MMxD device
 Url: http://www.szerafingomba.hu/softwares.html
@@ -21,14 +21,8 @@ write own handler application with this library easily.
 /usr/share/man/man3/libmmapi.3.gz
 /usr/share/man/hu/man3/libmmapi.3.gz
 /usr/lib/libmmapi.so
+/usr/lib/libmmapi.so.0
+/usr/lib/libmmapi.so.0.1.0
 
 %post
-mv /usr/lib/libmmapi.so /usr/lib/libmmapi.so.0.1.1
-ln -s /usr/lib/libmmapi.so.0.1.1 /usr/lib/libmmapi.so.0
-ln -s /usr/lib/libmmapi.so.0.1.1 /usr/lib/libmmapi.so
-ldconfig
-
-%postun
-rm /usr/lib/libmmapi.so.0.1.1
-rm /usr/lib/libmmapi.so.0
 ldconfig
