@@ -26,7 +26,7 @@ interface
 library mmapi;
 {$ENDIF}
 uses
-  Classes, SysUtils, httpsend;
+  Classes, SysUtils, {$IFDEF WIN32} ComServ, {$ENDIF} httpsend;
 var
   devdata: array[0..31] of string;
   devinfo: array[0..2,0..31] of string;
@@ -192,16 +192,11 @@ end;
 
 {$IFNDEF STATIC}
 {$IFDEF WIN32}
-procedure dllregisterserver; stdcall; export;
-begin
-end;
-
-procedure dllunregisterserver; stdcall; export;
-begin
-end;
-
-exports dllregisterserver name 'dllRegisterServer';
-exports dllunregisterserver name 'dllUnRegisterServer';
+exports
+  DllCanUnloadNow;
+  DllGetClassObject;
+  DllRegisterServer;
+  DllUnRegisterServer;
 {$ENDIF}
 
 exports address {$IFDEF WIN32} name 'address' {$ENDIF};

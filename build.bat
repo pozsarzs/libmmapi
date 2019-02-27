@@ -6,7 +6,7 @@ rem  build.bat
 rem  Utility for build/install/uninstall application on Windows
 rem ----------------------------------------------------------------------------
 
-set PPC=c:\lazarus\fpc\2.6.4\bin\i386-win32\ppc386.exe
+set PPC=c:\lazarus\fpc\3.0.4\bin\i386-win32\ppc386.exe
 set NAME=libmmapi
 set /p VERSION=<documents\VERSION
 set OS=win32
@@ -34,7 +34,7 @@ rem - build source
 echo Check FreePascal compiler: %PPC%
 if not exist "%PPC%" ( set /p PPC=Enter compiler with full path: )
 if not exist "%PPC%" ( echo Error: compiler not found! & goto end )
-set FPFLAG1=-TWin32 -MObjFPC -Scgi -O1 -ve -WG
+set FPFLAG1=-TWin32 -MObjFPC -Scgi -O1 -ve -WR
 set FPFLAG2=-Fu. -Fu.\lib\%ARCH%-%OS% -FE.\lib\%ARCH%-%OS% -Fu.\synapse
 
 cd source
