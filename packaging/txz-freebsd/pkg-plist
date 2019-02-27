@@ -5,3 +5,5 @@
 /usr/share/man/man3/libmmapi.3.gz
 /usr/share/man/hu/man3/libmmapi.3.gz
 /usr/lib/libmmapi.so
+/usr/lib/libmmapi.so.0
+/usr/lib/libmmapi.so.0.1.0

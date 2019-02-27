@@ -1,7 +1,7 @@
 @echo off
 rem ----------------------------------------------------------------------------
 rem  MMAPI 0.1 * Application programming interface for MMxD device
-rem  Copyright (C) 2019 Pozsár Zsolt pozsar.zsolt@.szerafingomba.hu
+rem  Copyright (C) 2019 Pozsár Zsolt pozsar.zsolt@szerafingomba.hu
 rem  build.bat
 rem  Utility for build/install/uninstall application on Windows
 rem ----------------------------------------------------------------------------

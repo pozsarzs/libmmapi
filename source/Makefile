@@ -1,6 +1,6 @@
 # +----------------------------------------------------------------------------+
 # | MMAPI 0.1 * Application programming interface for MMxD device              |
-# | Copyright (C) 2019 Pozsár Zsolt <pozsar.zsolt@.szerafingomba.hu>           |
+# | Copyright (C) 2019 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>            |
 # | Makefile                                                                   |
 # | Make file for FreePascal source.                                           |
 # +----------------------------------------------------------------------------+

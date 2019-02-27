@@ -1,4 +1,4 @@
-MMAPI
+LibMMAPI
 It is an API library for MMxD Raspberry Pi based growing
 house controlling and remote monitoring device. You can
 write own handler application with this library easily.
