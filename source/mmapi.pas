@@ -57,39 +57,39 @@ implementation
 {$ENDIF}
 
 function address: pchar;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 begin
   result:=pchar(devinfo[1,2]);
 end;
 
 function city: pchar;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 begin
   result:=pchar(devinfo[1,1]);
 end;
 
 function devicedata(line: byte): pchar;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 begin
   if line<32 then
     result:=pchar(devdata[line]);
 end;
 
 function deviceportsname(line: byte): pchar;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 begin
   if line<32 then
     result:=pchar(devinfo[2,line]);
 end;
 
 function devicetype: pchar;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 begin
   result:=pchar(devinfo[0,0]);
 end;
 
 function deviceversion: pchar;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 begin
   result:=pchar(devinfo[0,1]);
 end;
@@ -104,13 +104,13 @@ begin
 end;
 
 function growinghousenumber: pchar;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 begin
   result:=pchar(devinfo[1,3]);
 end;
 
 function uid(id: pchar): pchar;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 begin
   if length(id)>0
     then devuid:=id
@@ -118,7 +118,7 @@ begin
 end;
 
 function url(u: pchar): pchar;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 begin
   if length(u)>0
     then devurl:=u
@@ -126,19 +126,19 @@ begin
 end;
 
 function username: pchar;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 begin
   result:=pchar(devinfo[1,0]);
 end;
 
 function version: pchar;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 begin
   result:=LIBVER;
 end;
 
 procedure erasedata;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 var
   b: byte;
 begin
@@ -147,7 +147,7 @@ begin
 end;
 
 procedure eraseinfo;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 var
   a, b: byte;
 begin
@@ -157,7 +157,7 @@ begin
 end;
 
 procedure getdata;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 var
   b: byte;
 begin
@@ -172,7 +172,7 @@ begin
 end;
 
 procedure getinfo;
-{$IFNDEF STATIC} cdecl; export; {$ENDIF}
+{$IFNDEF STATIC} {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF} export; {$ENDIF}
 var
   b: byte;
   value: byte;
@@ -191,6 +191,19 @@ begin
 end;
 
 {$IFNDEF STATIC}
+{$IFDEF WIN32}
+procedure dllregisterserver; stdcall; export;
+begin
+end;
+
+procedure dllunregisterserver; stdcall; export;
+begin
+end;
+
+exports dllregisterserver name 'dllRegisterServer';
+exports dllunregisterserver name 'dllUnRegisterServer';
+{$ENDIF}
+
 exports address {$IFDEF WIN32} name 'address' {$ENDIF};
 exports city {$IFDEF WIN32} name 'city' {$ENDIF};
 exports devicedata {$IFDEF WIN32} name 'devicedata' {$ENDIF};
