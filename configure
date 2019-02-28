@@ -2050,7 +2050,7 @@ test "$stagedir" != "" && mandir="$prefix/man"
 
 
 
-ac_config_files="$ac_config_files Makefile.global packaging/deb-i386/postinst packaging/deb-i386/postrm packaging/rpm/libptc.spec.post packaging/rpm//libptc.spec.postun packaging/txz-linux/doinst.sh"
+ac_config_files="$ac_config_files Makefile.global"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -2758,11 +2758,6 @@ for ac_config_target in $ac_config_targets
 do
   case $ac_config_target in
     "Makefile.global") CONFIG_FILES="$CONFIG_FILES Makefile.global" ;;
-    "packaging/deb-i386/postinst") CONFIG_FILES="$CONFIG_FILES packaging/deb-i386/postinst" ;;
-    "packaging/deb-i386/postrm") CONFIG_FILES="$CONFIG_FILES packaging/deb-i386/postrm" ;;
-    "packaging/rpm/libptc.spec.post") CONFIG_FILES="$CONFIG_FILES packaging/rpm/libptc.spec.post" ;;
-    "packaging/rpm//libptc.spec.postun") CONFIG_FILES="$CONFIG_FILES packaging/rpm//libptc.spec.postun" ;;
-    "packaging/txz-linux/doinst.sh") CONFIG_FILES="$CONFIG_FILES packaging/txz-linux/doinst.sh" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
   esac
