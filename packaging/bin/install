@@ -1,0 +1,81 @@
+#!/bin/bash
+# +----------------------------------------------------------------------------+
+# | LibMMAPI 0.1 * Application programming interface for MMxD device           |
+# | Copyright (C) 2019 Pozsár Zsolt <pozsar.zsolt@.szerafingomba.hu>           |
+# | install                                                                    |
+# | Installer script                                                           |
+# +----------------------------------------------------------------------------+
+
+# constans
+SWN="LibMMAPI"
+SWV=`cat documents/VERSION`
+INSTDIR=/opt/libmmapi
+LINKDIR=/usr/local
+SUBDIRS="documents \
+         manuals"
+SYSDIRS="$LINKDIR/lib \
+         $LINKDIR/share/man/man3 \
+         $LINKDIR/share/man/hu/man3"
+LIBFILE=libmmapi
+CPFILES="$LIBFILE.so \
+         README \
+         uninstall"
+README=$INSTDIR/README
+
+# installer
+clear
+echo "--------------------------------------------------------------------------------"
+echo "$SWN $SWV installer script"
+echo "Copyright (C) 2019 Pozsar Zsolt <pozsar.zsolt@.szerafingomba.hu>"
+echo "--------------------------------------------------------------------------------"
+if [ `whoami` != 'root' ]
+then echo 'ERROR: You are not root!'; exit
+fi
+echo "  This program is free software: you can redistribute it and/or modify it
+under the terms of the European Union Public License 1.1 version.
+
+  This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE."
+echo "--------------------------------------------------------------------------------"
+sleep 3
+echo "Installing..."
+echo "- creating directories:"
+mkdir --parents $INSTDIR 2> /dev/null
+for D in $SUBDIRS
+do
+  mkdir --parents $INSTDIR/$D 2> /dev/null
+  echo "  $INSTDIR/$D"
+done
+for D in $SYSDIRS
+do
+  mkdir --parents $D 2> /dev/null
+  echo "  $D"
+done
+echo "- copying files:"
+for D in $SUBDIRS
+do
+  cp $D/* $INSTDIR/$D 2> /dev/null
+  echo "  "$D'/* --> '$INSTDIR/$D/
+done
+for F in $CPFILES
+do
+  cp $F $INSTDIR/ 2> /dev/null
+  echo "  "$F' --> '$INSTDIR/
+done
+echo "- creating symbolic links:"
+ln -s $INSTDIR/$LIBFILE.so $LINKDIR/lib/$LIBFILE.so 2> /dev/null
+echo "  "$INSTDIR/$LIBFILE.so' --> '$LINKDIR/lib/$LIBFILE.so
+ln -s $INSTDIR/$LIBFILE.so $LINKDIR/lib/$LIBFILE.so.0 2> /dev/null
+echo "  "$INSTDIR/$LIBFILE.so' --> '$LINKDIR/lib/$LIBFILE.so.0
+ln -s $INSTDIR/$LIBFILE.so $LINKDIR/lib/$LIBFILE.so.$SWV.0 2> /dev/null
+echo "  "$INSTDIR/$LIBFILE.so' --> '$LINKDIR/lib/$LIBFILE.so.$SWV.0
+ldconfig
+ln -s $INSTDIR/manuals/"$LIBFILE"_en.3.gz $LINKDIR/share/man/man3/$LIBFILE.3.gz 2> /dev/null
+echo "  "$INSTDIR/manuals/"$LIBFILE"_en.3.gz' --> '$LINKDIR/share/man/man3/$LIBFILE.3.gz
+ln -s $INSTDIR/manuals/"$LIBFILE"_hu.3.gz $LINKDIR/share/man/hu/man3/$LIBFILE.3.gz 2> /dev/null
+echo "  "$INSTDIR/manuals/"$LIBFILE"_hu.3.gz' --> '$LINKDIR/share/man/hu/man3/$LIBFILE.3.gz
+echo "..done."
+echo ""
+echo "Thank you for installing $SWN,"
+echo "see $README and manual page for more information."
