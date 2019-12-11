@@ -1,15 +1,15 @@
-LibMMAPI  - Application programming interface for MMxD device
--------------------------------------------------------------
+LibMMAPI -   Application programming interface for MMxD device
+--------------------------------------------------------------
 
-I. About software
-
+1. About software
+~~~~~~~~~~~~~~~~~
   It is an API library for MMxD Raspberry Pi based growing house controlling
   and remote monitoring device. You can write own handler application with
   this library easily. See manual page for available functions and procedures.
 
-II. How to get installer package for my OS?
-
-  Visit homepage (see later) to download installer packages:
+2. How to get installer package for my OS?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+a. Visit homepage (see later) to download installer packages:
 
   FreeBSD:     libmmapi-0.1.txz
                libmmapi-0.1-FreeBSD-Port.shar  port package
@@ -18,28 +18,42 @@ II. How to get installer package for my OS?
                libmmapi-0.1-i586-1.txz         Slackware
                libmmapi-0.1-1.i386.rpm         Suse Linux
                libmmapi-0.1-i586.bin           (linux-i586)
-               libmmapi-0.1-i586.tar.gz        (linux-i586) - portable
+               libmmapi-0.1-i586.tar.gz        (linux-i586)
 
   Windows:     libmmapi-0.1-win32.exe
-               libmmapi-0.1-win32.msi
-               libmmapi-0.1-win32.zip          portable
+               libmmapi-0.1-win32.zip
 
   source:      libmmapi-0.1.tar.gz
 
-III. Contact
+b. Download from Github
 
-   Homepage:             <http://www.szerafingomba.hu/softwares.html>
-   Author:               Pozsar Zsolt self-employed
+  $ git clone https://github.com/pozsarzs/libmmapi.git
+
+c. Download from Debian repository
+
+  set reporitory:
+  # echo "deb http://www.szerafingomba.hu/deb/ ./" >> /etc/apt/sources.list
+  # wget -q -O - http://www.szerafingomba.hu/deb/KEY.gpg | apt-key add -
+  # apt-get update
+
+  install
+  # apt-get install libmmapi
+
+3. Contact
+~~~~~~~~~~
+
+   Homepage:             <http://www.szerafingomba.hu/softwares/>
+   Author:               Pozsar Zsolt
    Tax ID:               60407850-1-36
    Registration num.:    20703695
 
    E-mail:               <pozsar.zsolt@szerafingomba.hu>
    Phone:                +36 56/470-272
-   Mobile:               +36 30/359-8783
+   Mobile:               +36 30/249-5030
    Postal address:       Pozsar Zsolt
                          Kurazsi Fo ut 1.
                          HU-5430 Tiszafoldvar
                          Hungary
----------------------------------------------------------------------------------
-    MMAPI * Copyright (C) 2019 Pozsar Zsolt <pozsar.zsolt@.szerafingomba.hu>
 
+---------------------------------------------------------------------------------
+ LibMMAPI * Copyright (C) 2019 Pozsar Zsolt <pozsar.zsolt@szerafingomba.hu>

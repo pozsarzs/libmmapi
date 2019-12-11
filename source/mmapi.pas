@@ -1,5 +1,5 @@
 { +--------------------------------------------------------------------------+ }
-{ | MMAPI 0.1 * Application programming interface for MMxD device            | }
+{ | LibMMAPI v0.1 * Application programming interface for MMxD device        | }
 { | Copyright (C) 2019 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>          | }
 { | mmapi.pas                                                                | }
 { | source code                                                              | }

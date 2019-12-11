@@ -4,7 +4,7 @@
 !define PRODUCT_NAME "LibMMAPI"
 !define PRODUCT_VERSION "0.1"
 !define PRODUCT_PUBLISHER "Pozsar Zsolt"
-!define PRODUCT_WEB_SITE "http://www.szerafingomba.hu/softwares.html"
+!define PRODUCT_WEB_SITE "http://www.szerafingomba.hu/softwares/"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\mmapi.dll"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
