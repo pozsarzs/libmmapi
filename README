@@ -1,6 +1,6 @@
 Short information
 -----------------
-LibMMAPI * Application programming interface for MMxD device
+LibMMAPI * Application programming interface for MM3D and MM5D devices
 Copyright (C) 2019 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>
 - OS: FreeBSD, Linux, Windows
 - UI: -
